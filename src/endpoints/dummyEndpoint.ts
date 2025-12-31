@@ -4,7 +4,7 @@ import { z } from "zod";
 
 export class DummyEndpoint extends OpenAPIRoute {
 	public schema = {
-		tags: ["Dummy"],
+		tags: ["Source"],
 		summary: "this endpoint is an example",
 		operationId: "example-endpoint", // This is optional
 		request: {
