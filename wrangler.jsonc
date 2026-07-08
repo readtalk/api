@@ -1,0 +1,47 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+                "AuthorizationDurableObject",
+				"ConversationDurableObject"
+			],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+            {
+				"class_name": "AuthorizationDurableObject",
+				"name": "AUTHORIZATION_DURABLE_OBJECT"
+			},
+			{
+				"class_name": "ConversationDurableObject",
+				"name": "CONVERSATION_DURABLE_OBJECT"
+			}
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DATABASE",
+			"database_name": "SERVER_D1",
+			"database_id": "9c6d47de-7136-494a-96aa-3e16648a4880"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "SESSION_CACHE",
+			"id": "54f89be27a414fabaf381a919403582e"
+		},
+		{
+			"binding": "FEED_CACHE",
+			"id": "54f89be27a414fabaf381a919403582e"
+		}
+	],
+	"observability": {
+		"enabled": true
+	}
+}
